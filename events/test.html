@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="../../vue.js"></script>
+  <title>Test</title>
+</head>
+<body>
+  <div id="test">
+    <button v-on:click="showAlert">Click, dude!</button><br>
+    {{ value }}<br>
+    <input type="text" v-on:keydown="alterValue($event)" placeholder="type here moron!"><br>
+    {{ value2 }}<br>
+    <input type="text" v-on:keydown.enter="alterValue2($event)" placeholder="type here ya dink!">
+  </div>
+  <script type="text/javascript" src="./test.js"></script>
+</body>
+</html>

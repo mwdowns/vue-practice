@@ -5,11 +5,14 @@ new Vue({
   },
   methods: {
     increaseNum: function(event) {
-      console.log(event)
       return this.number += 1
     },
     decreaseNum: function() {
       return this.number -= 1
+    },
+    alertMe: function(event) {
+      console.log(event)
+      alert('yo! you said: ' + event.currentTarget.value)
     }
   }
 })
