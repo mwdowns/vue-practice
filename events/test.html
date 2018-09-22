@@ -12,7 +12,10 @@
     {{ value }}<br>
     <input type="text" v-on:keydown="alterValue($event)" placeholder="type here moron!"><br>
     {{ value2 }}<br>
-    <input type="text" v-on:keydown.enter="alterValue2($event)" placeholder="type here ya dink!">
+    <input type="text" v-on:keydown.enter="alterValue2($event)" placeholder="type here ya dink!"><br>
+    <p>Counter: {{ counter }} - Threshold: {{threshold }}</p>
+    <p>{{ result }}</p>
+    <button v-on:click="counter++">Increase</button> - <button v-on:click="counter--">Decrease</button>
   </div>
   <script type="text/javascript" src="./test.js"></script>
 </body>
