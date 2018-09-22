@@ -1,7 +1,8 @@
 new Vue({
   el: '#app',
   data: {
-    title: 'hello world!'
+    title: 'hello world!',
+    link: 'http://www.groundfloor.us'
   },
   methods: {
     changeTitle: function(event) {
