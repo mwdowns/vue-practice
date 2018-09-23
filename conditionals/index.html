@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="../../vue.js"></script>
+  <title>Conditionals</title>
+</head>
+<body>
+  <div id="conditionals">
+    <div v-if="show">See me?</div>
+    <div>And me?</div>
+    <button @click="show = !show">Show</button>
+    <div>
+      <ul>
+        <li v-for="(thing, index) in things">{{ thing }} - {{ index }}</li>
+      </ul>
+    </div>
+    <hr>
+    <div>
+      <ul>
+        <li v-for="animal in animals">{{ animal.name }} - {{ animal.boy }}</li>
+      </ul>
+    </div>
+  </div>
+  <script type="text/javascript" src="./conditionals.js"></script>
+</body>
+</html>
