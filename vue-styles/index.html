@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="../../vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <title>Styles</title>
+</head>
+<body>
+  <div id="styles">
+    <div
+      class="demo"
+      @click="changeRed = !changeRed"
+      :class="{red: changeRed}"></div>
+    <div class="demo"
+      class="demo"
+      @click="changeGreen = !changeGreen"
+      :class="{green: changeGreen}"></div>
+    <div class="demo"
+      class="demo"
+      @click="changeBlue = !changeBlue"
+      :class="{blue: changeBlue}"></div>
+    <div class="demo" :class="color"></div>
+    <hr>
+    <input type="text" v-model="color">
+  </div>
+  <script type="text/javascript" src="./vue-styles.js"></script>
+</body>
+</html>
