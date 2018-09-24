@@ -1,11 +1,11 @@
 #header {
   color: red;
-  border: 5px solid red;
+  /* border: 5px solid red; */
   text-align: center;
 }
 
 #health-bars {
-  border: 5px solid green;
+  /* border: 5px solid green; */
   text-align: center;
 }
 
@@ -50,24 +50,24 @@
 }
 
 #game-buttons {
-  border: 5px solid blue;
+  /* border: 5px solid blue; */
   text-align: center;
 }
 
 .start {
   width: 99%;
   height: 40px;
-  border: 5px solid purple;
+  /* border: 5px solid purple; */
 }
 
 .play {
   width: 99%;
   height: 40px;
-  border: 5px solid pink;
+  /* border: 5px solid pink; */
 }
 
 #game-log {
-  border: 5px solid yellow;
+  /* border: 5px solid yellow; */
 }
 
 .log-line {
