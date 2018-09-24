@@ -1,0 +1,77 @@
+#header {
+  color: red;
+  border: 5px solid red;
+  text-align: center;
+}
+
+#health-bars {
+  border: 5px solid green;
+  text-align: center;
+}
+
+.bar {
+  width: 45%;
+  height: 40px;
+  display: inline-block;
+  /* border: 5px solid black */
+}
+
+.player-health, .monster-health {
+  text-align: center;
+  height: 50%;
+  background-color: yellowgreen;
+  color: white;
+  border: 1px solid black;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  /* border: 2px solid red; */
+}
+
+.attacks {
+  text-align: left;
+  width: 30%;
+  /* border: 2px solid blue; */
+}
+
+.health {
+  width: 30%;
+  /* border: 2px solid blue; */
+}
+
+.potions {
+  text-align: right;
+  width: 30%;
+  /* border: 2px solid blue; */
+}
+
+#game-buttons {
+  border: 5px solid blue;
+  text-align: center;
+}
+
+.start {
+  width: 99%;
+  height: 40px;
+  border: 5px solid purple;
+}
+
+.play {
+  width: 99%;
+  height: 40px;
+  border: 5px solid pink;
+}
+
+#game-log {
+  border: 5px solid yellow;
+}
+
+.log-line {
+  width: 100%;
+  text-align: center;
+  height: 40px;
+}
