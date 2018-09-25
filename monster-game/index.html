@@ -19,11 +19,11 @@
           <div class="health">Player Health: {{ playerHealth }}</div>
           <div class="potions"> Health Potions: {{ healthPotions }}</div>
         </div>
-        <div class="player-health" :style="playerHealthBar"></div>
+        <div class="player-health" :style="{width: playerHealth + '%'}"></div>
       </div>
       <div class="bar">
         <div class="monster-info">Monster Health: {{ monsterHealth }}</div>
-        <div class="monster-health" :style="monsterHealthBar"></div>
+        <div class="monster-health" :style="{width: monsterHealth + '%'}"></div>
       </div>
     </div>
     <div v-show="!finished">

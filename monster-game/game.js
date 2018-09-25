@@ -3,13 +3,7 @@ new Vue({
   data: {
     playing: false,
     playerHealth: 100,
-    playerHealthBar: {
-      width: '100%'
-    },
     monsterHealth: 100,
-    monsterHealthBar: {
-      width: '100%'
-    },
     gameLog: [],
     ranAway: false,
     specialAttacksCounter: 3,
@@ -23,18 +17,14 @@ new Vue({
     },
     playerHealth: function() {
       if (this.playerHealth <= 0) {
-        this.playerHealthBar.width = '0%'
+        this.playerHealth = 0
         this.playerLoses()
-      } else {
-        this.playerHealthBar.width = this.playerHealth + '%'
       }
     },
     monsterHealth: function() {
       if (this.monsterHealth <= 0 ) {
-        this.monsterHealthBar.width = '0%'
+        this.monsterHealth= 0
         this.playerWins()
-      } else {
-        this.monsterHealthBar.width = this.monsterHealth + '%'
       }
     }
   },
@@ -52,42 +42,46 @@ new Vue({
     },
     attackButton: function() {
       console.log('attack')
-      let playerDamage = calculateDamage()
+      let playerDamage = calculateDamage(10)
       this.monsterHealth -= playerDamage
-      this.gameLog.push(`Player hits monster for ${playerDamage} damage! `)
-      let monsterDamage = calculateDamage()
+      this.gameLog.unshift(`Player hits monster for ${playerDamage} damage! `)
+      let monsterDamage = calculateDamage(15)
       this.playerHealth -= monsterDamage
-      this.gameLog.push(`Monster hits player for ${monsterDamage} damage!`)
+      this.gameLog.unshift(`Monster hits player for ${monsterDamage} damage!`)
     },
     specialAttackButton: function() {
       let specialAttack = Math.random()
       if (specialAttack < 0.06) {
         console.log('critical fail')
-        let monsterDamage = calculateDamage() + 10
+        let monsterDamage = calculateDamage(15)
         this.playerHealth -= monsterDamage
-        this.gameLog.push(`Player MISSED SPECIAL ATTACK and Monster hits player for ${monsterDamage} damage!`)
+        this.gameLog.unshift(`Player MISSED SPECIAL ATTACK and Monster hits player for ${monsterDamage} damage!`)
       } else {
         console.log('hit')
-        let playerDamage = calculateDamage() + 5
-        this.monsterHealth -= playerDamage
-        this.gameLog.push(`Player lands a SPECIAL ATTACK and hits monster for ${playerDamage} damage! `)
+        this.monsterHealth -= 15
+        this.gameLog.unshift(`Player lands a SPECIAL ATTACK and hits monster for 15 damage! `)
       }
       this.specialAttacksCounter--
     },
     healSelf: function() {
       console.log('heal')
       let heal = calculateHeal()
-      if (this.playerHeath == 100) {
+      if (this.playerHealth === 100) {
+        console.log('here')
+        this.gameLog.unshift('Player wastes a potion!')
+        this.healthPotions--
         return
       } else if (this.playerHealth + heal > 100) {
+        this.gameLog.unshift('Player is at full health!')
         this.playerHealth = 100
       } else {
         this.playerHealth += heal
+        this.gameLog.unshift(`Player heals self for ${heal} points!`)
       }
       this.healthPotions--
     },
     runAway: function() {
-      this.gameLog.push('Player ran away!')
+      this.gameLog.unshift('Player ran away!')
       this.playing = !this.playing
       let vm = this
       setTimeout(function() {
@@ -107,8 +101,8 @@ new Vue({
   }
 })
 
-let calculateDamage = () => {
-  return Math.floor((Math.random() * 10) +1)
+let calculateDamage = (max) => {
+  return Math.floor((Math.random() * max) +1)
 }
 
 let calculateHeal = () => {
