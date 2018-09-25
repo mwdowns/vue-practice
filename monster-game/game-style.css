@@ -13,15 +13,29 @@
   width: 45%;
   height: 40px;
   display: inline-block;
-  /* border: 5px solid black */
+  /* border: 1px solid black */
 }
 
-.player-health, .monster-health {
+.player-health-container {
+  border: 1px solid black;
+}
+
+.player-health {
   text-align: center;
   height: 50%;
   background-color: yellowgreen;
   color: white;
+  /* border: 1px solid black; */
+}
+
+.monster-health-container {
+  background-color: yellowgreen;
   border: 1px solid black;
+}
+.monster-health {
+  height: 50%;
+  background-color: white;
+  /* border: 1px solid black; */
 }
 
 .player-info {

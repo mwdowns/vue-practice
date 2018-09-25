@@ -41,7 +41,6 @@ new Vue({
       this.healthPotions = 3
     },
     attackButton: function() {
-      console.log('attack')
       let playerDamage = calculateDamage(10)
       this.monsterHealth -= playerDamage
       this.gameLog.unshift(`Player hits monster for ${playerDamage} damage! `)
@@ -52,22 +51,18 @@ new Vue({
     specialAttackButton: function() {
       let specialAttack = Math.random()
       if (specialAttack < 0.06) {
-        console.log('critical fail')
         let monsterDamage = calculateDamage(15)
         this.playerHealth -= monsterDamage
         this.gameLog.unshift(`Player MISSED SPECIAL ATTACK and Monster hits player for ${monsterDamage} damage!`)
       } else {
-        console.log('hit')
         this.monsterHealth -= 15
         this.gameLog.unshift(`Player lands a SPECIAL ATTACK and hits monster for 15 damage! `)
       }
       this.specialAttacksCounter--
     },
     healSelf: function() {
-      console.log('heal')
       let heal = calculateHeal()
       if (this.playerHealth === 100) {
-        console.log('here')
         this.gameLog.unshift('Player wastes a potion!')
         this.healthPotions--
         return
@@ -89,12 +84,10 @@ new Vue({
       }, 5000)
     },
     playerWins: function() {
-      console.log('won!')
       this.finished = true
       this.won = true
     },
     playerLoses: function() {
-      console.log('lost!')
       this.finished = true
       this.won = false
     }
